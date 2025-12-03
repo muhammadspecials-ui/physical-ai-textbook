@@ -1,0 +1,109 @@
+---
+sidebar_position: 1
+---
+
+
+
+# Module 2: The Digital Twin
+
+
+
+## Introduction to Robot Simulation
+
+Before deploying robots in the real world, we test them in simulation. A **digital twin** is a virtual replica of a physical robot that behaves according to real-world physics.
+
+## Why Simulation?
+
+Simulation offers critical advantages:
+
+- **Safety**: Test dangerous scenarios without risk
+- **Cost**: No hardware damage or wear
+- **Speed**: Iterate faster than real-time
+- **Scalability**: Test thousands of scenarios
+- **Accessibility**: Develop without expensive hardware
+
+## Gazebo: The Physics Engine
+
+Gazebo is the industry-standard robot simulator. It provides:
+
+- Realistic physics simulation
+- Sensor simulation (cameras, LIDAR, IMU)
+- Plugin system for custom behaviors
+- ROS 2 integration
+
+### Setting Up Gazebo
+
+```bash
+# Install Gazebo
+sudo apt install ros-humble-gazebo-ros-pkgs
+
+# Launch Gazebo with ROS 2
+ros2 launch gazebo_ros gazebo.launch.py
+```
+
+### Creating a Simple World
+
+```xml
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <world name="robot_world">
+    <include>
+      <uri>model://sun</uri>
+    </include>
+    
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+    
+    <model name="box">
+      <pose>0 0 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>1 1 1</size>
+            </box>
+          </geometry>
+        </collision>
+        
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>1 1 1</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 0 0 1</ambient>
+          </material>
+        </visual>
+      </link>
+    </model>
+  </world>
+</sdf>
+```
+
+## Physics Simulation
+
+Gazebo simulates real-world physics including gravity, collisions, and inertia. See the full content in the original module for detailed examples.
+
+## Sensor Simulation
+
+### LIDAR, Depth Cameras, and IMU
+
+Gazebo can simulate all major robot sensors with high fidelity. This allows you to test perception algorithms before deploying to real hardware.
+
+## Unity for High-Fidelity Rendering
+
+While Gazebo excels at physics, Unity provides photorealistic rendering and advanced human-robot interaction.
+
+## Key Takeaways
+
+- Digital twins enable safe, cost-effective testing
+- Gazebo provides realistic physics simulation
+- Sensors can be accurately simulated
+- Unity offers photorealistic rendering
+- URDF + SDF define robot structure and behavior
+
+## Next Steps
+
+In Module 3, we'll supercharge our simulations with NVIDIA Isaac, bringing AI-powered perception and learning to our robots!
