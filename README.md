@@ -1,3 +1,11 @@
+---
+title: Physical AI Backend
+emoji: 🤖
+colorFrom: blue
+colorTo: purple
+sdk: docker
+app_port: 7860
+---
 # Physical AI & Humanoid Robotics Textbook
 
 An AI-native textbook for learning Physical AI and Humanoid Robotics with integrated RAG chatbot, authentication, and content personalization.
