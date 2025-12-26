@@ -15,14 +15,14 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://muhammadspecials-ui.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: '/physical-ai-textbook/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'your-github-username', // Usually your GitHub org/user name.
+  organizationName: 'muhammadspecials-ui', // Usually your GitHub org/user name.
   projectName: 'physical-ai-textbook', // Usually your repo name.
 
   onBrokenLinks: 'throw',
@@ -44,7 +44,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/muhammadspecials-ui/physical-ai-textbook/tree/main/',
         },
         blog: {
           showReadingTime: true,
@@ -55,7 +55,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/muhammadspecials-ui/physical-ai-textbook/tree/main/',
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
@@ -109,7 +109,7 @@ const config: Config = {
           position: 'right',
         },
         {
-          href: 'https://github.com/yourusername/physical-ai-textbook',
+          href: 'https://github.com/muhammadspecials-ui/physical-ai-textbook',
           label: 'GitHub',
           position: 'right',
         },
