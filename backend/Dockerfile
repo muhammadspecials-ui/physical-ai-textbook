@@ -9,12 +9,14 @@ RUN apt-get update && apt-get install -y \
     build-essential \
     && rm -rf /var/lib/apt/lists/*
 
-# Copy the backend directory contents into the container at /app
-COPY backend/ /app/
+# Copy requirements first for better caching
+COPY requirements.txt /app/
 
-# Install any needed packages specified in requirements.txt
-# If requirements.txt is missing, we install manually based on our knowledge
-RUN pip install --no-cache-dir fastapi uvicorn sqlalchemy psycopg2-binary qdrant-client openai pydantic python-dotenv python-multipart
+# Install dependencies from requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy the rest of the application
+COPY . /app/
 
 # Make port 8000 available to the world outside this container
 EXPOSE 8000

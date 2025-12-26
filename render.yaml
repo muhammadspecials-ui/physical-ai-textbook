@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: physical-ai-backend
+    runtime: docker
+    region: oregon
+    plan: free
+    rootDir: backend
+    envVars:
+      - key: PORT
+        value: 8000
+      - key: PYTHON_VERSION
+        value: 3.10.0
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: QDRANT_URL
+        sync: false
+      - key: QDRANT_API_KEY
+        sync: false
+      - key: DATABASE_URL
+        sync: false
+      - key: AUTH_SECRET
+        generateValue: true
+      - key: FRONTEND_URL
+        value: https://muhammadspecials-ui.github.io/physical-ai-textbook/
